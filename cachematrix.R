@@ -3,9 +3,6 @@
 ## To calculate large size matrix efficiently,
 ## This R code have two functions for cache inverse matrix
 
-# load library to use inv function
-library(matlib)
-
 # This function returns matrix properties list which is used to cache inverse matrix
 makeCacheMatrix <- function(x = matrix()) {
     i<-NULL
@@ -41,7 +38,7 @@ cacheSolve <- function(x, ...) {
     data <-x$get()
     
     # calculate inverse matrix
-    i<-inv(data) 
+    i<-solve(data) 
     
     x$setInverse(i)
     
